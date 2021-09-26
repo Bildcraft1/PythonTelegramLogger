@@ -18,11 +18,11 @@ async def logger(event):
     if event.message.text and not event.message.media:
         print("{}: {}".format(sender.first_name, event.message.text))
         client.parse_mode = 'html'
-        await client.send_message(log_id, "<b>{}</b>: {}".format(sender.first_name, event.message.text))
+        await client.send_message(log_id, "<b><i>{}</i></b>: {}".format(sender.first_name, event.message.text))
     else:
         print("{}: *sent a media*".format(sender.first_name))
         client.parse_mode = 'html'
-        await client.send_message(log_id, "<b>{}</b>: *sent a media*".format(sender.first_name))
+        await client.send_message(log_id, "<b><i>{}</i></b>: *sent a media*".format(sender.first_name))
 
 
 client.start()
